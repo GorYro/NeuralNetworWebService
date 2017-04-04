@@ -1,0 +1,130 @@
+.result {
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.enter {
+    display: block;
+    position: relative;
+}
+
+.hello {
+
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+}
+
+.resultB {
+    width: 100px;
+}
+
+.upload {
+    position: relative;
+    display: inline-block;
+    margin: 10px
+}
+
+.origin {
+    position: relative;
+    display: inline-block;
+    margin: 10px
+}
+
+.btn {
+    margin: 3px;
+}
+
+form input {
+    margin: 3px;
+}
+
+.form-names {
+    position: relative;
+    top: 30px;
+}
+
+.form-style {
+    margin: 10px;
+}
+
+.header {
+    height: 30px;
+    line-height: 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+}
+
+.header p {
+    margin: 5px;
+}
+
+.test {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.reg {
+    margin: 10px;
+}
+
+.url {
+    width: 1000px;
+}
+
+.result {
+    margin: 10px;
+}
+
+.tablebreed {
+    position: relative;
+    display: inline-block;
+    margin: 10px
+}
+
+img.pets {
+    height: 320px;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+div.jumbotron {
+    padding-top: 10px;
+    height: 1000px;
+}
+
+ul.pets {
+    width: 380px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+ul.pets li {
+    line-height: 1.5em;
+    float: left;
+    display: inline;
+    cursor: pointer;
+    padding: 3px;
+
+}
+
+#double li {
+    width: 50%;
+}
+
+#loader {
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    opacity: 0;
+    display: none;
+}
+

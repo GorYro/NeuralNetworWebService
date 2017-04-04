@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>neural</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"
+          th:href="@{css/style.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}"/>
+
+
+</head>
+<body cz-shortcut-listen="true">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Нейроные Сети</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+
+            <ul class="nav navbar-nav">
+                <li><a href="/">Главная</a></li>
+
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Разпознование <b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="/animals">Животные</a></li>
+                        <li><a href="/face">Лица</a></li>
+                        <li><a href="/style">Картинки в стиле</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+
+
+            <!--
+            <form class="navbar-form navbar-right" role="form">
+
+                  <button type="submit" class="btn btn-primary social" formaction="/authtype/1">VK</button>
+
+                  <button type="submit" class="btn btn-primary social" formaction="/authtype/2"> FB</button>
+
+            </form>
+            -->
+        </div>
+    </div>
+</div>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="form-style" id="maincontainer1">
+        <h2>Укажите ссылку на животное (в формате jpg) породу которого хотите разпознать:</h2>
+        <form th:action="@{send}" th:method="post" class="reg">
+            <input class="url" th:type="text" th:name="url"/>
+            <br/>
+            <input type="submit" id="btn" th:value="Отправить" class="btn btn-primary"/>
+            <br/>
+        </form>
+    </div>
+    <div class="container" id="maincontainer2">
+        <h2>Нейронная сеть поддерживает следующие породы:</h2>
+        <div class="col-md-4">
+            <h3>Собаки:</h3>
+            <p>
+            <ul id="double" class="pets">
+                <a th:href="@{/imgOrigin/GreatPyrenees.jpg}">
+                    <li>GreatPyrenees</li>
+                </a>
+                <a th:href="@{/imgOrigin/Boxer.jpg}">
+                    <li>Boxer</li>
+                </a>
+                <a th:href="@{/imgOrigin/Samoyed.jpg}">
+                    <li>Samoyed</li>
+                </a>
+                <a th:href="@{/imgOrigin/Saintbernard.jpg}">
+                    <li>Saintbernard</li>
+                </a>
+                <a th:href="@{/imgOrigin/Beagle.jpg}">
+                    <li>Beagle</li>
+                </a>
+                <a th:href="@{/imgOrigin/Havanese.jpg}">
+                    <li>Havanese</li>
+                </a>
+                <a th:href="@{/imgOrigin/StaffordShireBullTerrier.jpg}">
+                    <li>StaffordShireBullTerrier</li>
+                </a>
+                <a th:href="@{/imgOrigin/Pug.jpg}">
+                    <li>Pug</li>
+                </a>
+                <a th:href="@{/imgOrigin/AmericanPitBullTerrier.jpg}">
+                    <li>AmericanPitBullTerrier</li>
+                </a>
+                <a th:href="@{/imgOrigin/Leonberger.jpg}">
+                    <li>Leonberger</li>
+                </a>
+                <a th:href="@{/imgOrigin/Bassethound.jpg}">
+                    <li>Bassethound</li>
+                </a>
+                <a th:href="@{/imgOrigin/ChihuaHua.jpg}">
+                    <li>ChihuaHua</li>
+                </a>
+                <a th:href="@{/imgOrigin/GermanShorthaired.jpg}">
+                    <li>GermanShorthaired</li>
+                </a>
+                <a th:href="@{/imgOrigin/YorkshireTerrier.jpg}">
+                    <li>YorkshireTerrier</li>
+                </a>
+                <a th:href="@{/imgOrigin/EnglishSetter.jpg}">
+                    <li>EnglishSetter</li>
+                </a>
+                <a th:href="@{/imgOrigin/AmericanBullDog.jpg}">
+                    <li>AmericanBullDog</li>
+                </a>
+                <a th:href="@{/imgOrigin/Shibainu.jpg}">
+                    <li>Shibainu</li>
+                </a>
+                <a th:href="@{/imgOrigin/Keeshond.jpg}">
+                    <li>Keeshond</li>
+                </a>
+                <a th:href="@{/imgOrigin/JapaneseChin.jpg}">
+                    <li>JapaneseChin</li>
+                </a>
+                <a th:href="@{/imgOrigin/Pomeranian.jpg}">
+                    <li>Pomeranian</li>
+                </a>
+                <a th:href="@{/imgOrigin/MiniaturePinscher.jpg}">
+                    <li>MiniaturePinscher</li>
+                </a>
+                <a th:href="@{/imgOrigin/EnglishCockerSpaniel.jpg}">
+                    <li>EnglishCockerSpaniel</li>
+                </a>
+                <a th:href="@{/imgOrigin/ScottishTerrier.jpg}">
+                    <li>ScottishTerrier</li>
+                </a>
+            </ul>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Коты:</h3>
+            <p>
+            <ul id="double" class="pets">
+                <a th:href="@{/imgOrigin/Persian.jpg}">
+                    <li>Persian</li>
+                </a>
+                <a th:href="@{/imgOrigin/EgyptianMau.jpg}">
+                    <li>EgyptianMau</li>
+                </a>
+                <a th:href="@{/imgOrigin/Bombay.jpg}">
+                    <li>Bombay</li>
+                </a>
+                <a th:href="@{/imgOrigin/MaineCoon.jpg}">
+                    <li>MaineCoon</li>
+                </a>
+                <a th:href="@{/imgOrigin/Siamese.jpg}">
+                    <li>Siamese</li>
+                </a>
+                <a th:href="@{/imgOrigin/Abyssinian.jpg}">
+                    <li>Abyssinian</li>
+                </a>
+                <a th:href="@{/imgOrigin/Ragdoll.jpg}">
+                    <li>Ragdoll</li>
+                </a>
+                <a th:href="@{/imgOrigin/Birman.jpg}">
+                    <li>Birman</li>
+                </a>
+                <a th:href="@{/imgOrigin/Sphynx.jpg}">
+                    <li>Sphynx</li>
+                </a>
+                <a th:href="@{/imgOrigin/Bengal.jpg}">
+                    <li>Bengal</li>
+                </a>
+                <a th:href="@{/imgOrigin/RussianBlue.jpg}">
+                    <li>RussianBlue</li>
+                </a>
+                <a th:href="@{/imgOrigin/MiniaturePinscher.jpg}">
+                    <li>MiniaturePinscher</li>
+                </a>
+                <a th:href="@{/imgOrigin/BritishShortHair.jpg}">
+                    <li>BritishShortHair</li>
+                </a>
+            </ul>
+            </p>
+        </div>
+
+
+    </div>
+    <div id="loader"><img src="img/gears.gif" alt=""/></div>
+
+</div>
+
+<div class="container">
+
+    <footer>
+        <p>© Волков Вадим 2017</p>
+    </footer>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/js.js"></script>
+
+</body>
+</html>
